@@ -52,19 +52,21 @@ function ChangePlayer() {
 function checkWinner() {
   for (const [a, b, c] of winCondition) {
     if (
-      inputCells[a] == player &&
-      inputCells[b] == player &&
-      inputCells[c] == player
+      inputCells[a] === player &&
+      inputCells[b] === player &&
+      inputCells[c] === player
     ) {
       declareWinner([a, b, c]);
       return true;
     }
-    if (inputCells.every((cell) => cell != "")) {
-      declareDraw();
-      return true;
-    }
   }
+  if (inputCells.every((cell) => cell !== "")) {
+    declareDraw();
+    return true;
+  }
+  return false;
 }
+
 function declareWinner(winningIndices) {
   titleHeader.textContent = `${player} Win`;
   isPauseGame = true;
