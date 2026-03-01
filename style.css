@@ -20,14 +20,7 @@ main {
   justify-content: center;
   position: relative;
 }
-main::before {
-  position: absolute;
-  content: "";
-  width: 10px;
-  height: 100vh;
-  background-color: rgba(255, 255, 255, 0.562);
-  z-index: 1;
-}
+
 header {
   display: flex;
   width: 235px;
@@ -67,7 +60,6 @@ header #oPlayerDisplay {
   grid-template-columns: repeat(3, 70px);
   grid-template-rows: repeat(3, 70px);
   gap: 12px;
-  z-index: 2;
 }
 #board .cell {
   background-color: #17122a;
